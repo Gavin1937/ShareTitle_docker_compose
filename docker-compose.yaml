@@ -1,0 +1,29 @@
+
+version: "3"
+services:
+  backend:
+    build:
+      context: ShareTitle/
+    image: sharetitle
+    container_name: sharetitle
+    volumes:
+      - ./data:/app/data
+    command: /app/data/config.json
+
+  frontend:
+    build:
+      context: ShareTitle_react/
+    image: sharetitle-react
+    container_name: sharetitle-react
+
+  nginx:
+    image: nginx:alpine
+    container_name: sharetitle-nginx
+    ports:
+      - ${APP_PORT}:80
+    depends_on:
+      - backend
+      - frontend
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+

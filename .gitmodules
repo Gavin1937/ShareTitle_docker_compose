@@ -1,0 +1,8 @@
+[submodule "ShareTitle"]
+	path = ShareTitle
+	url = https://github.com/Gavin1937/ShareTitle.git
+	branch = main
+[submodule "ShareTitle_react"]
+	path = ShareTitle_react
+	url = https://github.com/Gavin1937/ShareTitle_react.git
+	branch = main
