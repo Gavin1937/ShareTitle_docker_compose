@@ -38,7 +38,7 @@ python setup_app.py
 * to deploy ShareTitle project, run:
 
 ```sh
-docker-compose up
+docker-compose up -d
 ```
 
 * to undeploy ShareTitle project, run:
