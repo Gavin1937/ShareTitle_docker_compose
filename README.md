@@ -10,6 +10,7 @@ This repository contains all the necessary files to setup ShareTitle project wit
 
 # requirements
 
+* **make sure to recursively clone this repo to download entire ShareTitle project**
 * [docker](https://docs.docker.com/) and [docker-compose](https://docs.docker.com/compose/install/) installed
 * [Python >= 3.8](https://www.python.org/) for [one script setup](#one-script-setup) only
 
@@ -26,8 +27,8 @@ python setup_app.py
 ## manual setup
 
 1. create a new folder under this repository call **data**
-2. copy [./ShareTitle/data/docker_config.json](./ShareTitle/data/docker_config.json) to **./data/config.json**
-3. copy [./ShareTitle/data/parseScript.json](./ShareTitle/data/parseScript.json) to **./data/parseScript.json**
+2. copy [./ShareTitle/data/docker_config.json](https://github.com/Gavin1937/ShareTitle/blob/main/data/docker_config.json) to **./data/config.json**
+3. copy [./ShareTitle/data/parseScript.json](https://github.com/Gavin1937/ShareTitle/blob/main/data/parseScript.json) to **./data/parseScript.json**
 4. follow the instruction in [ShareTitle repo](https://github.com/Gavin1937/ShareTitle#configuration) to change these config files
 5. update [./.env](./.env) file and set **APP_PORT** to your desire port
 6. run command `docker-compose up -d --build` to build & launch ShareTitle project
