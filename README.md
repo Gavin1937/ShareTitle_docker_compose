@@ -47,3 +47,11 @@ docker-compose up
 docker-compose down
 ```
 
+# interact with ShareTitle application
+
+once you deploy the application, you can go to your browser and visit the frontend: **http://localhost:${APP_PORT}/sharetitle**
+
+default `${APP_PORT}` value is set to `80` in [./.env](./.env) file
+
+you can also use ShareTitle backend api in other place, checkout [Backend Api Documentation](https://github.com/Gavin1937/ShareTitle/blob/main/doc/ApiDocumentation.md)
+
