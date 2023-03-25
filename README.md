@@ -32,7 +32,7 @@ python setup_app.py
 4. follow the instruction in [ShareTitle repo](https://github.com/Gavin1937/ShareTitle#configuration) to change these config files
 5. create a `.env` file under repository root and set **APP_PORT** to your desire port (case sensitive)
    * Example: `APP_PORT=80`
-   * you can use [./env.template](./env.template) as your foundation
+   * you can use [./.env.template](./.env.template) as your foundation
 6. run command `docker-compose build --no-cache` to build the ShareTitle project, and then
 7. run command `docker-compose up -d` to launch the ShareTitle project
 
