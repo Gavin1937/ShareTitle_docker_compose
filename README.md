@@ -30,8 +30,11 @@ python setup_app.py
 2. copy [./ShareTitle/data/docker_config.json](https://github.com/Gavin1937/ShareTitle/blob/main/data/docker_config.json) to **./data/config.json**
 3. copy [./ShareTitle/data/parseScript.json](https://github.com/Gavin1937/ShareTitle/blob/main/data/parseScript.json) to **./data/parseScript.json**
 4. follow the instruction in [ShareTitle repo](https://github.com/Gavin1937/ShareTitle#configuration) to change these config files
-5. update [./.env](./.env) file and set **APP_PORT** to your desire port
-6. run command `docker-compose up -d --build` to build & launch ShareTitle project
+5. create a `.env` file under repository root and set **APP_PORT** to your desire port (case sensitive)
+   * Example: `APP_PORT=80`
+   * you can use [./env.template](./env.template) as your foundation
+6. run command `docker-compose build --no-cache` to build the ShareTitle project, and then
+7. run command `docker-compose up -d` to launch the ShareTitle project
 
 # use docker-compose
 
@@ -51,7 +54,7 @@ docker-compose down
 
 once you deploy the application, you can go to your browser and visit the frontend: **http://localhost:${APP_PORT}/sharetitle**
 
-default `${APP_PORT}` value is set to `80` in [./.env](./.env) file
+default `${APP_PORT}` value is set to `80` by [setup_app.py](./setup_app.py)
 
 you can also use ShareTitle backend api in other place, checkout [Backend Api Documentation](https://github.com/Gavin1937/ShareTitle/blob/main/doc/ApiDocumentation.md)
 

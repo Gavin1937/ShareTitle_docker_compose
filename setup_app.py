@@ -26,16 +26,20 @@ dest = Path('./data')
 datafolder = Path('./ShareTitle/data')
 if not dest.exists():
   dest.mkdir()
+  if not datafolder.exists():
+    raise Exception('Cannot find ShareTitle repository, please clone recursively')
   copy(datafolder/'docker_config.json', dest/'config.json')
   copy(datafolder/'parseScript.json', dest)
-if not datafolder.exists():
-  raise Exception('Cannot find ShareTitle repository, please clone recursively')
 
 # ask for change app port
 print('update application port')
-with open('.env', 'r', encoding='utf-8') as file:
-  envraw = file.read()
-env = dict( map(lambda i:i.split('='), envraw.splitlines()) )
+env = dict()
+try:
+  with open('.env', 'r', encoding='utf-8') as file:
+    envraw = file.read()
+  env = dict( map(lambda i:i.split('='), envraw.splitlines()) )
+except:
+  env = {'APP_PORT':80}
 print('Do you want to change your application port?')
 print(f'Current application will be deployed on port:{env["APP_PORT"]}')
 port = input('Enter new port number if you want to change it, otherwise press \"Enter\": ')
@@ -81,5 +85,6 @@ if opt.lower() == 'y' or len(opt) == 0:
 
 # run docker-compose
 print('\nrun docker-compose\n')
-system(' docker-compose up -d --build ')
+system(' docker-compose build --no-cache ')
+system(' docker-compose up -d ')
 
