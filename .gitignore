@@ -1,7 +1,13 @@
 
 # folders
 data/
+backup/
 
 # files
+*.sh
+*.sqlite
+*.db
+*.log
+*.json
 .env
 
