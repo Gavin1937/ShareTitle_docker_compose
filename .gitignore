@@ -1,7 +1,7 @@
 
 # folders
-data/
-backup/
+*data*/
+*backup*/
 
 # files
 *.sh
