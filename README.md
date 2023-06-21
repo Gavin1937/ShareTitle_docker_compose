@@ -52,7 +52,7 @@ docker-compose down
 
 # interact with ShareTitle application
 
-once you deploy the application, you can go to your browser and visit the frontend: **http://localhost:${APP_PORT}/sharetitle**
+once you deploy the application, you can go to your browser and visit the frontend: **http://localhost:${APP_PORT}/sharetitle/**
 
 default `${APP_PORT}` value is set to `80` by [setup_app.py](./setup_app.py)
 
