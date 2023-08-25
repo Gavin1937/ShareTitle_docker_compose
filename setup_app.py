@@ -69,8 +69,10 @@ if opt.lower() == 'y' or len(opt) == 0:
   conn.commit()
   
   # ask for username & password
-  username = input('Enter username: ')
-  password = input('Enter password: ')
+  username = input('Enter lowercase username: ').strip().lower()
+  password = input('Enter password: ').strip()
+  print(f'Your username is: {username}')
+  print(f'Your password is: {password}')
   auth_hash = genHash(username+password)
   cur.execute(
     'REPLACE INTO auth VALUES(?, ?);',
